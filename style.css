@@ -1,0 +1,94 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(13, 7, 20, 1);
+}
+
+.container {
+    max-width: 583px;
+    margin: 109px auto 0;
+    border-radius: 20px;
+    background-color: rgba(29, 24, 37, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    border-radius: 10px;
+}
+
+.add {
+    margin: 50px 85px 0 65px;
+    display: flex;
+}
+
+.add input {
+    border-color: rgba(158, 120, 207, 1);
+    background-color: rgba(29, 24, 37, 1);
+    color: white;
+    outline: none;
+    width: 365px;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 11px 0 10px 15px;
+}
+
+.add button {
+    margin-left: 11px;
+    padding: 4px;
+    background-color: rgba(158, 120, 207, 1);
+    border: none;
+}
+
+.head_txt {
+    margin-bottom: 18px;
+    color: white;
+}
+
+.todo_container {
+    margin: 59px 85px 0 65px;
+}
+
+.todo_container_done {
+    margin: 59px 85px 0 65px;
+}
+
+.todo {
+    margin-bottom: 16px;
+    border-radius: 10px;
+    background-color: rgba(21, 16, 28, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.todo_wrapper {
+    margin: 22px 0 22px 21px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+}
+
+.todo_txt {
+    font-size: 16px;
+    color: rgba(158, 120, 207, 1);
+}
+
+.todo_txt_done {
+    color: rgba(120, 207, 176, 1);
+    margin: 8px 0;
+}
+
+.todo_btns {
+    margin-left: auto;
+}
+
+.todo_photo {
+    margin: 4px;
+}
+
+.todo_photo:hover {
+    opacity: 0.5;
+}

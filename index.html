@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <div class="add">
+                    <input type="text" placeholder="Add a new task" class="validate">
+                    <button class="btn waves-effect waves-light" type="button" onclick="notes_add()">
+                        <img src="add.png">
+                    </button>
+                </div>
+                <div class="todo_container">
+                    <p class="head_txt" id="todo">Tasks to do - 0</p>
+                    <div id="list"></div>
+                </div>
+                <div class="todo_container_done">
+                    <p class="head_txt" id="done">Done - 0</p>
+                    <div id="done_list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
