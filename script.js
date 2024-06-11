@@ -1,77 +1,77 @@
-let todo_label = document.getElementById('todo');
-let done_label = document.getElementById('done');
-let num = 0;
-let num_done = 0;
+let todoContainer = document.getElementById('list');
+let doneContainer = document.getElementById('done_list');
+let todoCount = 0;
+let doneCount = 0;
 
-function notes_add() {
-    var notetext = document.querySelector(".validate").value;
+function addNote() {
+    let noteText = document.querySelector('.validate').value;
 
-    var todo = document.createElement('div');
+    let todo = document.createElement('div');
     todo.classList.add('todo');
 
-    var wrapper = document.createElement('div');
+    let wrapper = document.createElement('div');
     wrapper.classList.add('todo_wrapper');
 
-    var btns_cont = document.createElement('div');
-    btns_cont.classList.add('todo_btns');
+    let btnsCont = document.createElement('div');
+    btnsCont.classList.add('todo_btns');
 
-    var notetext_cont = document.createElement('p');
-    notetext_cont.classList.add('todo_txt');
-    notetext_cont.textContent = notetext;
+    let noteTextCont = document.createElement('p');
+    noteTextCont.classList.add('todo_txt');
+    noteTextCont.textContent = noteText;
 
-    var check = document.createElement('img');
+    let check = document.createElement('img');
     check.src = 'Check.png';
     check.classList.add('todo_photo');
 
-    var trash = document.createElement('img');
+    let trash = document.createElement('img');
     trash.src = 'delete.png';
     trash.classList.add('todo_photo');
 
-    btns_cont.appendChild(check);
-    btns_cont.appendChild(trash);
+    btnsCont.appendChild(check);
+    btnsCont.appendChild(trash);
 
-    wrapper.appendChild(notetext_cont);
-    wrapper.appendChild(btns_cont);
+    wrapper.appendChild(noteTextCont);
+    wrapper.appendChild(btnsCont);
 
     todo.appendChild(wrapper);
 
     check.addEventListener('click', function() {
-        var done_cont = document.querySelector('.todo_container_done');
+        let doneTaskCont = document.createElement("div");
+        doneTaskCont.classList.add('todo');
 
-        var done_task_cont = document.createElement("div");
-        done_task_cont.classList.add('todo');
+        let doneTask = document.createElement("div");
+        doneTask.classList.add('todo_wrapper_done');
 
-        var done_task = document.createElement("div");
-        done_task.classList.add('todo_wrapper_done');
+        let doneTaskTxt = document.createElement("s");
+        doneTaskTxt.textContent = noteText;
+        doneTaskTxt.classList.add('todo_txt_done');
 
-        var done_task_txt = document.createElement("s");
-        done_task_txt.textContent = notetext;
-        done_task_txt.classList.add('todo_txt_done');
+        doneTask.appendChild(doneTaskTxt);
 
-        done_task.appendChild(done_task_txt);
+        doneTaskCont.appendChild(doneTask);
 
-        done_task_cont.appendChild(done_task);
-
-        done_cont.appendChild(done_task_cont);
+        doneContainer.appendChild(doneTaskCont);
 
         todo.remove();
-        num -= 1;
-        num_done += 1;
-        todo_label.innerText = "Tasks to do - " + num;
-        done_label.innerText = "Done - " + num_done;
+        todoCount -= 1;
+        doneCount += 1;
+        updateCounts();
     })
-
-    var todo_cont = document.querySelector('.todo_container');
-    todo_cont.appendChild(todo);
 
     trash.addEventListener('click', function() {
         todo.remove();
-        num -= 1;
-        todo_label.innerText = "Tasks to do - " + num;
+        todoCount -= 1;
+        updateCounts();
     })
 
-    num += 1;
-    todo_label.innerText = "Tasks to do - " + num;
-    done_label.innerText = "Done - " + num_done;
-    console.log(num);
+    todo.appendChild(wrapper);
+    todoContainer.appendChild(todo);
+
+    todoCount += 1;
+    updateCounts();
+}
+
+function updateCounts() {
+    document.getElementById('todo').innerText = "Tasks to do - " + todoCount;
+    document.getElementById('done').innerText = "Done - " + doneCount;
 }
